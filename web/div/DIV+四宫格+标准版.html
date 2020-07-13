@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DIV+四宫格+标准版</title>
+		
+		<style>
+			/* id设置某一个的属性，并且使用# */
+			#outer{
+				width: 420px;	/*-- 为了使四宫格等距 --*/
+				height: 420px;
+				border: solid 5px red;
+				margin: auto;	/*-- auto:自动居中 --*/
+			}
+			/* class设置某一个或者一类的属性，并且使用. */
+			.inner{
+				width: 200px;
+				height: 200px;
+				border: solid 5px red;
+				float: left;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="outer">
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+			<div class="inner"></div>
+		</div>
+		
+	
+		
+	</body>
+</html>

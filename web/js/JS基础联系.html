@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<script>
+			/// 等差数列求和
+			// function add(){
+			// 	var sum = 0, i;
+			// 	for(i = 100; i <= 500; i++)
+			// 	{
+			// 		sum = sum + i;
+			// 	}
+			// 	document.writeln("100加到500的计算总和是:",sum);
+			// }
+			
+			function add(){
+				
+				document.writeln("100加到500的计算总和是:", (100 + 500) * 401 / 2);
+			}
+			
+			// function IsChar(){
+				
+			// 	var char = window.prompt("请输入一个字符:");
+			// 	if(char.length != 1)
+			// 	{
+			// 		document.writeln("非法输入，长度是", char.length);
+			// 		return;
+			// 	}
+				
+			// 	if(char >= '0' && char <= '9')
+			// 	{
+			// 		document.writeln("数字");
+			// 	}
+			// 	else if(char >= 'a' && char <= 'z')
+			// 	{
+			// 		document.writeln("小写字母");
+			// 	}
+			// 	else if(char >= 'A' && char <= 'Z')
+			// 	{
+			// 		document.writeln("大写字母");
+			// 	}
+			// 	else
+			// 	{
+			// 		document.writeln("特殊符号");
+			// 	}	
+			// }
+			
+			function IsChar(){
+				
+				var str = window.prompt("请输入一个字符:");
+				var char = str.charCodeAt(0);
+				//假如输入的是 -1
+				if(char >= '0' && char <= '9')
+				{
+					document.writeln("数字");
+				}
+				else if(char >= 'a' && char <= 'z')
+				{
+					document.writeln("小写字母");
+				}
+				else if(char >= 'A' && char <= 'Z')
+				{
+					document.writeln("大写字母");
+				}
+				else
+				{
+					document.writeln("特殊符号");
+				}	
+			}
+			
+			function login(){
+				var i = 0;
+				
+				do{
+					var name = window.prompt("请输入用户名:").toLowerCase();
+					
+					if( name == "admin") {
+						 
+						var password = window.prompt("请输入密码:").toLowerCase();
+						if(password == "123456")
+						{
+							window.alert("密码正确，请登录");
+							break;
+						}
+						else{
+							window.alert("密码错误，请重新输入");
+							i = 0;
+						}
+					} 
+					else{
+						window.alert("用户名输入错误，请重新输入");
+						i++;
+					}
+					
+				}while(i < 3);
+			}
+			
+			function IsNarcNum(){
+				
+				var bit1 = 0, bit2 = 0, bit3 = 0;
+					
+				for(num = 100; num <= 999; num++)
+				{
+					bit1 = parseInt(num/100);
+					bit2 = parseInt((num % 100)/10);
+					bit3 = num%10;
+					
+					if(num == (bit1 * bit1 * bit1 + bit2 * bit2 * bit2 + bit3 * bit3 * bit3))
+					{
+						document.writeln("质数:", num);
+					}	
+				}
+			}
+			
+			function MyPower(){
+				// var i = 0, sum = 1;
+				//  var x = window.prompt("请输入底数:");
+				//  var y = window.prompt("请输入指数:");
+				 
+				//  if(isNaN(x) || isNaN(y))
+				//  {
+				// 	 window.alert("输入有误");
+				// 	 return;
+				//  }
+				 
+				//  for(; i < y; i++)
+				//  {
+				// 	 sum *= x;
+				//  }
+				//  document.writeln(x + "的" + y + "次幂结果是:" + sum);
+				 
+				 //次方运算
+				 document.writeln(x + "的" + y + "次幂结果是:" + Math.pow(x,y));
+				 
+			}
+			
+			
+			function MyChar()
+			{
+				var dig = 0, l_c = 0, h_c = 0, symbol = 0;
+				var string = window.prompt("请输入一个字符串");
+				//要对负数  中文字符进行判断
+				string = string.toString();
+				// document.writeln("输入的结果是:" + string);
+				
+				for(i = 0; i < string.length; i++)
+				{
+					if(string[i] >= '0' && string[i] <= '9')
+					{
+						dig++;
+					}
+					else if(string[i] >= 'a' && string[i] <= 'z')
+					{
+						l_c++;
+					}
+					else if(string[i] >= 'A' && string[i] <= 'Z')
+					{
+						h_c++;
+					}
+					else
+					{
+						symbol++;
+					}
+				}
+				
+				document.writeln(string.length + " 数字个数:"+dig+"  小写字母:"+l_c+"  大写字母"+h_c+"  特殊字符"+symbol);
+			}
+			
+			function ball(){
+				
+				// // var red_b = 0, black_b = 0, white_b = 0, count = 0, sum = 0;
+				// var sum = 0, count = 0;
+				// for(var red_b = 0; red_b<=5; red_b++)
+				// {
+				// 	for(var black_b = 0; black_b<=7; black_b++)
+				// 	{
+				// 		// document.write("组合" + "red_b:" + red_b + "  black_b:" + black_b);
+				// 		for(var white_b = 0; white_b<=9; white_b++)
+				// 		{
+				// 			// document.write("组合" + "red_b:" + red_b + "  black_b:" + black_b + "  white_b:" + white_b);
+				// 			// sum = red_b + black_b + white_b;
+				// 			// document.writeln("总数" + sum + "组合" + "red_b:" + red_b + "  black_b:" + black_b + "  white_b:" + white_b);
+				// 			if(red_b + black_b + white_b == 12)
+				// 			{
+				// 				count++;
+				// 				document.writeln("组合" + "red_b:" + red_b + "  black_b:" + black_b + "  white_b:" + white_b);
+				// 			}
+				// 		}
+				// 	}
+				// }
+				
+				// document.writeln("一共有" + count + "种组合");
+				
+				var red_b = 0, black_b = 0;
+				for(red_b=0; red_b<=2; red_b++)
+				{
+					for(black_b=0;black_b<=3; black_b++)
+					{			
+						document.writeln("组合" + "red_b:" + red_b + "  black_b:" + black_b);		
+					}
+				}
+				
+			}
+			
+			function coin(){
+				 
+				var one_c = 0, two_c = 0, five_c = 0, count = 0;
+				
+				for(one_c = 1; one_c < 60; one_c++)
+				{
+					for(two_c = 1; two_c < 30; two_c++)
+					{
+						for(five_c = 1; five_c < 12; five_c++)
+						{
+							if(((one_c+two_c+five_c)==50) && ((one_c+2*two_c+5*five_c)==60))
+							{
+								document.writeln("组合" + "一分硬币:" + one_c + "  两分硬币:" + two_c + "  五分硬币:" + five_c);
+								count++;
+							}
+						}
+					}
+				}
+				
+				document.writeln("一共有" + count + "种组合");		
+			}
+			
+			function Mul_tables(){
+				
+				for(var i = 1; i <= 9; i++)
+				{
+					for(var j = 1; j <= 9; j++)
+					{
+						document.writeln(j + "*" + i + "=" + i*j);
+						if(i == j)
+						{
+							document.write("<br>");
+							break;//跳出j这层循环用break，continue代表不执行下面的语句了
+						}
+					}
+				}
+			}
+			
+			function Reverse(){
+				
+				var number = 1234;
+				
+				if(isNaN(number) == true)
+				{
+					window.alert("不是正整数，请重新输入");
+				}
+				else{
+					
+					if(number < 0)
+					{
+						window.alert("输入负数，请重新输入");
+					}else if(parseInt(number) == number){
+						window.alert("输入正整数");
+						
+						// var shang = 0;
+						// do{							
+						// 	shang = parseInt(number/10);//必须parseInt，因为是个小数，到时候会陷入无限循环中
+						// 	if(shang > 0)
+						// 	{
+						// 		document.write(number%10);
+						// 		break;
+						// 	}
+							
+						// 	document.write(number%10);
+						// 	number = shang;
+							
+						// }while(1);					
+						while(number > 0){
+							
+							var shang = number % 10;
+							document.write(shang);
+							number = parseInt(number/10);
+						}
+					}else{
+						
+						window.alert("输入分数，请重新输入");
+					}
+					
+				}
+			}
+			
+			function Guess(){
+				
+				var number = parseInt(Math.random()*1000);
+				var count = 0;
+				
+				do{					
+					var input_n = window.prompt("请输入一个数字");
+					if(isNaN(input_n) == true)
+					{
+						window.alert("非法输入，请重新输入");
+						continue;
+					}
+					
+					if(input_n < number)
+					{
+						window.alert("小了，请重新输入, 随机数是：");
+						count++;
+					}else if(input_n > number){
+						window.alert("大了，请重新输入, 随机数是：");
+						count++;
+					}else{
+						window.alert("通关，次数：" + count);
+						break;
+					}
+				}while(1);	
+			}
+			
+			function HandleStr(){
+				
+				var str = "-0.12";
+				
+				for(var i = 0; i < str.length; i++){
+					
+					if((i==0)&&(str.charAt(0)=='-'))
+					{
+						
+						if(isNaN(str.charAt(1)))
+						{
+							window.alert("输入非法1");
+							break;
+						}
+						else{
+							//确定第0位是-，第1位是数字了，第2位是小数点
+							if(str.charAt(2) == '.')
+							{
+								i = 3;
+								continue;
+							}
+							else{
+								
+							}
+						}
+						
+						i++;
+						continue;
+					}
+					//接下来的判断是从i=2开始的					
+					if(isNaN(str.charAt(i)) && (i!=2))
+					{
+						window.alert("输入非法2");
+						break;
+					}
+				}
+			}
+			
+			//作用域的问题
+			function Prime_Numb(){
+				// var prime = true; //primer变量定义在外面，导致for语句块中找不到定义
+				for(var i = 2; i <= 100; i++)
+				{
+					var prime = true;//作用域定义的地方必须是这里，定义到外面去就是作用全局不会修改的
+					for(var j = 2; j <= Math.sqrt(i)+1; j++)
+					{
+						
+						if(i%j == 0)
+						{
+							prime = false;
+							//document.writeln("i="+i+"   j="+j);
+							break;
+						}
+					}
+					
+					if(prime == true)//判断的时候必须是==
+						document.writeln(i);
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		
+		<p>单击“试一试”，将调用一个函数</p>
+		
+		<button onclick="coin()">试一试</button>
+	</body>
+</html>

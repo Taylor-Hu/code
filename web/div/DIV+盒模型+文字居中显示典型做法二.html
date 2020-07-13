@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 使用line-height进行高度的计算 -->
+		<!-- 不设置height,自适应模式，更适应图片 -->
+		<style>
+						
+			#outer{
+				width: 600px;
+				/* height: 400px; */
+				height: 600px;
+				/*-- 必须设置border属性，不然子类设置margin属性的时候会出问题 --*/
+				border: solid 2px red; 		
+			}
+			
+			#inner{
+				width: 300px;
+				height: 140px;
+				background-color: blue;
+				/*-- 设置子类盒子居中显示 --*/
+				margin: auto; 
+				margin-top: 100px;
+				/*-- 文字垂直居中 --*/
+				text-align: center;  
+				line-height: 30px;	
+				padding-top: 70px;
+			} 
+			
+			#inner2{
+				width: 300px;
+				height: 300px;
+				border: solid 2px #00FFFF;
+				margin: auto;
+				text-align: center;
+				line-height: 300px;
+			}
+					
+		</style>
+	</head>
+	<body>
+		
+		<div id="outer">
+			<div id="inner">
+				<font>这是第一行</font></br>
+				<font>这是第二行</font>
+			</div>
+			
+			<div id="inner2">
+				<!-- line-height和vertical-align组合使用使图片居中显示 -->
+				<img src="../doc/Python开发-Web前端基础/HTML-Class53/image/30503149486084198.jpg" style="width: 150px; vertical-align: middle;" />
+			</div>
+		</div>
+		
+	</body>
+</html>

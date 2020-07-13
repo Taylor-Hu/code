@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		 <h2 align="center">列里边嵌入子表--高级实现方法</h2>
+		    <table border="1" align="center" bordercolor="#E76BFF" height="200px" cellpadding="1px" cellspacing="0px" width="400px">
+		        <!-- caption 元素定义表格标题 -->
+				<caption>购物车</caption>
+		        <!-- th 元素内部的文本通常会呈现为居中的粗体文本，而 td 元素内的文本通常是左对齐的普通文本。 -->
+				<tr>
+		            <th>1</th>
+		            <th>2</th>
+		            <th>3</th>
+		            <th>4</th>
+		        </tr>
+		        <tr>
+		            <td>名称</td>
+		            <td align=center>
+		                <table border="0" bordercolor="#E76BFF" cellpadding="1px" width="100%" height="100%" cellspacing="0px">
+		                    <tr>
+		                        <td align=center>1</td>
+		
+		                    </tr>
+		                    <tr>
+		                        <td style="border-top:1px solid #E76BFF;" align=center>2</td>
+		                    </tr>
+		
+		                </table>
+		            </td>
+		            <td>
+		                <table border="0" bordercolor="#E76BFF" cellpadding="1px" width="100%" height="100%" cellspacing="0px">
+		                    <tr>
+		                        <td align=center>1</td>
+		
+		                    </tr>
+		                    <tr>
+		                        <td style="border-top:1px solid #E76BFF;" align=center>2</td>
+		                    </tr>
+		                    <tr>
+		                        <td style="border-top:1px solid #E76BFF;" align=center>3</td>
+		                    </tr>
+		                </table>
+		            </td>
+		            <td>小计</td>
+		        </tr>
+		        <tr>
+		            <td>名称</td>
+		            <td align=center><b>2016-11-22</b></td>
+		            <td>小计</td>
+		            <td>小计</td>
+		
+		        </tr>
+		        <tr>
+		            <td>苹果</td>
+		            <td>3公斤</td>
+		            <td>5元/公斤</td>
+		            <td>15元</td>
+		        </tr>
+		        <tr>
+		            <td>香蕉</td>
+		            <td>2公斤</td>
+		            <td>6元/公斤</td>
+		            <td>12元</td>
+		        </tr>
+		        <tr>
+		            <td colspan=3 align=center>总价</td>
+		            <td>27元</td>
+		        </tr>
+		    </table>
+		
+		
+		
+	</body>
+</html>

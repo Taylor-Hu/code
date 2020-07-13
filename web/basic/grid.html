@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h2 align="center">合并表格行或列</h2>
+		<!-- 显示菜单 cellpadding=1 行与行之间的间隙 cellspacing=1 列与列之间的间隙-->
+		<table border="5" align="center" bordercolor="green" height="400" cellpadding="1" cellspacing="1" width="800">
+			<tr>
+				<!-- colspan=3 该列要占用三列 -->
+				<td align="center" colspan="3">菜谱</td>
+			</tr>
+			<tr>
+				<!-- rowspan=3 该行要占用3行 -->
+				<td rowspan="3">素菜</td>
+				<td>青草茄子</td>
+				<td>花椒扁豆</td>
+			</tr>
+			<tr>
+				<td>小炒韭菜</td>
+				<td>白豆腐</td>
+			</tr>
+			<tr>
+				<td rowspan="2">荤菜</td>
+				<td>清蒸龙</td>
+				<td>鱼香肉丝</td>
+			</tr>
+			<tr>
+				<td>小炒肉
+					<imgsrc="dog.jpg" width="70"/>
+				</td>
+				<td>水煮肉片</td>
+			</tr>			
+		</table>
+		
+		<h2 align="center">列里面嵌入子表--一般实现方法</h2>
+			<table border="0" align="center" bordercolor="red" width="700" height="400">购物车
+				<tr>
+					<td align="center" width="100"><b>1</b></td>
+					<td align="center" width="300"><b>2</b></td>
+					<td align="center" width="200"><b>3</b></td>
+					<td align="center" width="100"><b>4</b></td>
+				</tr>
+				<tr>
+					<td rowspan="3" align="left" valign="middle">名称</td>
+					<td rowspan="1.5" align="center" valign="middle">1</td>
+					<td align="center" valign="middle">1</td>
+					<td rowspan="3" align="left" valign="middle">小计</td>					
+				</tr>
+				<tr>
+					<td rowspan="1.5" align="center" valign="middle">2</td>
+					<td align="center" valign="middle">2</td>
+				</tr>
+				<tr>
+					<td align="center" valign="middle">3</td>
+				</tr>
+				<tr>
+					<td align="left">名称</td>
+					<td align="center">2016-11-22</td>
+					<td align="left">小计</td>
+					<td align="left">小计</td>
+				</tr>
+				<tr>
+					<td align="left">苹果</td>
+					<td align="left">3公斤</td>
+					<td align="left">5元/公斤</td>
+					<td align="left">15元</td>
+				</tr>
+				<tr>
+					<td align="left">香蕉</td>
+					<td align="left">2公斤</td>
+					<td align="left">6元/公斤</td>
+					<td align="left">12元</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center">总价</td>
+					<td align="left">27元</td>			
+				</tr>
+			</table>
+			
+	</body>
+</html>

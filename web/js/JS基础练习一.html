@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS基础练习一</title>
+		
+		<script>
+			
+			//1. 循环求和，100~500，等差数列求和
+			function add(){
+				console.log("100~500的和是：" + (100+500)*401/2)
+			}
+			
+			//2. 字符判断，键盘输入一个字符，判断是大写字母、小写字母、符号、数字
+			function IsChar(){
+				
+				var str = window.prompt("请输入一个字符");
+				
+				var val = str.charCodeAt(0);
+				if((val >= 0) && (val <= 9))
+				{
+					window.alert("数字");
+				}else if((val >= 'a') && (val <= 'z'))
+				{
+					window.alert("小写字母");
+				}else if((val >= 'A') && (val <= 'Z'))
+				{
+					window.alert("大写字母");
+				}else{
+					window.alert("标点");
+				}			
+			}
+			
+			//水仙花数，计算100~999, 推导出获取各个位数的方法
+			// parseint(sum/(10^n))%10, 个位：x=0, 十位：x=1, 百位：x=2
+			function IsNarcNum(){
+				
+				var bit1 = 0, bit2 = 0, bit3 = 0;
+				for(var num = 100; num <= 999; num++)
+				{
+					bit1 = num%10;
+					bit2 = parseInt(num/10)%10;
+					bit3 = parseInt(num/100)%10;
+					if((Math.pow(bit1,3) + Math.pow(bit2,3) + Math.pow(bit3,3)) == num){
+						window.alert("质数："+num+<br/>);
+					}
+				}
+				
+				//水仙花第二种思路解法，但是不推荐循环结构太深了，只是一种思路
+				// 水仙花的处理方式二：先定义个十百，再利用三重循环拼成这个三位数，再进行判断
+				// for (var i=1; i<=9; i++) {  // 百位数，从1开始到9
+				//     for (var j=0; j<=9; j++) {  // 十位数，从0开始到9
+				//         for (k=0; k<=9; k++) {  // 个位数，从0开始到9
+				//             var number = i*100 + j*10 +k;  // 根据三个数拉出一个三位数
+				//             // 判断各位数的立方和是否等该三位数本身
+				//             if (i*i*i + j*j*j + k*k*k == number) {
+				//                 document.write(number + "<br>");
+				//             }
+				//         }
+				//     }
+				// }
+			}
+			
+			//数字处理：用户输入一个正整数，倒序输出
+			//输入一个负数、小数
+			function Reverse(){
+				
+				var value = parseInt(window.prompt("请输入一个正整数"));			
+				do{
+					document.writeln(parseInt(value/10)%10);
+					value = parseInt(value/10);	
+							
+				}while(value!=0);
+				
+				// //输入的是一个负数
+				// var value= parseInt(window.prompt("请输入一个负数"));
+				
+				// value = 0 - value;//乘以-1就可以得到正数
+				// do{
+				// 	document.writeln(parseInt(value/10)%10);
+				// 	value = parseInt(value/10);
+				// }while(value!=0);
+				
+				// //输入的是一个小数,先将小数转换为整数，然后再进行整数的反转
+				// var value= parseInt(window.prompt("请输入一个负数"));
+				
+				// while(parseInt(value)!=value)//判断是不是小数：parseInt(value)!=value
+				// {
+				// 	value *= 10;
+				// }
+				
+			}
+			
+			//计算1~100之内的所有质数
+			function Prime_Numb(){
+				
+				for(var i = 3; i <= 100; i = i + 2){
+					var b_flag = true;
+					for(var j = 2; j <= Math.sqrt(i); j++){
+						if(i%j==0){
+							b_flag = false;
+							break;
+						}
+					}
+					if(b_flag == true){
+						document.write("质数"+i+<br/>);			
+					}
+				}
+				
+				// //200的平方差不多是14，14以内的质数2 3 5 7 11 13
+				// //i = i + 2说明是奇数,需要推理这段结果
+				// for(var i = 3; i <= 100; i = i + 2){
+					
+				// 	if((i%3!=0) && (i%5!=0) && (i%7!=0) && (i%11!=0) && （i%13!=0){
+				// 		document.write("质数"+i+<br/>);
+				// 	}
+				// }
+			}
+			
+			//九九乘法表
+			function Mul_tables(){
+				
+				for(var i = 1; i <= 9; i++)
+				{
+					for(var j = 1; j <= 9; j++)
+					{
+						document.writeln(j + "*" + i + "=" + i*j);
+						if(i == j)
+						{
+							document.write("<br>");
+							break;//跳出j这层循环用break，continue代表不执行下面的语句了
+						}
+					}
+				}
+			}
+			
+			//球类组合
+			function ball(){
+				var count = 0; // 定义组合的数量
+				for (var red=0; red<=5; red++) {
+				    for (var black=0; black<=7; black++) {
+				        for (var white=0; white<=9; white++) {
+				            if (red+black+white == 12) {
+				                count++;
+				                document.write("成功组合：红球：" + red + " 个，黑球：" + black + " 个，白球：" + white + " 个。<br>");
+				            }
+				        }
+				    }
+				}
+				document.write("成功的组合数一共为：" + count + " 种。");
+			}
+			
+			//十题：判断输入的字符是否是正确的数字（正数   负数   小数）
+			function Guess(){
+				
+				var value = prompt("请输入一个字符串：");
+				var isOk = true;    // 定义标志变量
+				var m = 0;  // 统计负号的个数
+				var n = 0;  // 统计小数点的个数
+				
+				for(var i=0; i<value.length; i++){
+				    var c = value.charCodeAt(i);    // 获取每个字符的ASCII码
+				
+				    // 通过ASCII码检查，如果字符不为0~9的数字或者负号或者小数点，则无效
+				    if ((c >= 0 && c < 45) || c > 57 || c == 47) {
+				        document.write("无效.");
+				        isOk = false;
+				        break;
+				    }
+				
+				    if(c == 45) m++;
+				    if(c == 46) n++;
+				
+				}
+				// 如果字符串本身所包含的符号是正确的情况下，再进行详细判断
+				if (isOk) {
+				    if(m > 1) {
+				        document.write("无效.");  // 负号太多
+				    }
+				    else if(n > 1) {
+				        document.write("无效.");  // 小数点太多
+				    }
+				    // 如果存在一个负号，而负号不在第一个位置，则无效
+				    else if(m == 1 && value.charCodeAt(0) != 45) {
+				        document.write("无效.");
+				    }
+				    // 如果存在一个小数点，而小数点在最后一个位置，则无效
+				    else if(n == 1 && value.charCodeAt(value.length-1) == 46) {
+				        document.write("无效.");
+				    }
+				    else {
+				        document.write("有效.");
+				    }
+				}				
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		
+		<p>单击“试一试”，将调用一个函数</p>
+		
+		<button onclick="add()">试一试</button>
+	</body>
+</html>

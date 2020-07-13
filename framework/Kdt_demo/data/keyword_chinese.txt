@@ -1,0 +1,6 @@
+打开浏览器,http://192.168.80.128/agileone
+输入文本,id=username,admin
+输入文本,id=password,admin
+登录,id=login
+等待,2
+关闭浏览器

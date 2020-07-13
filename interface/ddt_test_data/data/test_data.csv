@@ -1,0 +1,13 @@
+123,True
+.123,True
+.123,True
+1.23,True
+-1.23,True
+0.123,True
+,True
+-,False
+.,False
+1.2.3,True
+-12-3,False
+123@,False
+12/3,False

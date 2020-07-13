@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DIV+计算器</title>
+		
+		<style>
+			#part1{
+				border-radius: 5px 5px 0px 0px;
+				width: 404px;
+				height: 40px;
+				background-color: #696969;
+				margin: auto;
+				text-align: left;
+			}
+			
+			#part2{
+				width: 404px;
+				height: 60px;
+				background-color: #696969;
+				margin: auto;
+			}
+			
+			#part3{
+				width: 396px;
+				height: 56px;
+				border: solid 2px #696969;
+				background-color: red;
+				margin: auto;
+			}
+			
+			#part4{
+				width: 392px;
+				height: 52px;
+				border: solid 2px red;
+				background-color: white;
+				margin: auto;
+			}
+			
+			#outer{
+				width: 400px;
+				height: 424px;
+				background-color: #696969;
+				margin: auto;
+				border: solid 2px #696969;
+			}
+			
+			.inner{
+				width: 96px;
+				height: 80px;
+				background-color: #00BEFF;
+				float: left;
+				border: solid 2px #696969;
+				line-height: 80px;
+				text-align: center;
+			}
+			.inner:hover{
+				background-color: #FF7448;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="part1">
+			&nbsp;&nbsp;
+			<font size="6" color="red">●</font>
+			<font size="6" color="blue">●</font>
+			<font size="6" color="green">●</font>
+		</div>
+		<div id="part2">
+			<div id="part3">
+				<div id="part4">	
+				</div>
+			</div>
+		</div>
+		
+		<div id="outer">
+			<div class="inner"><font size="6">AC</font></div>
+			<div class="inner"><font size="6">+/</font></div>
+			<div class="inner"><font size="6">%</font></div>
+			<div class="inner"><font size="6">÷</font></div>
+					
+			<div class="inner"><font size="6">7</font></div>
+			<div class="inner"><font size="6">8</font></div>
+			<div class="inner"><font size="6">9</font></div>
+			<div class="inner"><font size="6">*</font></div>
+			
+			<div class="inner"><font size="6">4</font></div>
+			<div class="inner"><font size="6">5</font></div>
+			<div class="inner"><font size="6">6</font></div>
+			<div class="inner"><font size="6">-</font></div>
+			
+			<div class="inner"><font size="6">1</font></div>
+			<div class="inner"><font size="6">2</font></div>
+			<div class="inner"><font size="6">3</font></div>
+			<div class="inner"><font size="6">+</font></div>
+			
+			<div class="inner"><font size="6">0</font></div>
+			<div class="inner"><font size="6">回退</font></div>
+			<div class="inner"><font size="6">.</font></div>
+			<div class="inner"><font size="6">=</font></div>
+		</div>
+	</body>
+</html>

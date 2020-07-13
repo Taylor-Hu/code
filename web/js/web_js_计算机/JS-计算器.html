@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DIV计算器</title>
+		
+		<script>
+			var isEqualClick = false;
+			var isPointClick = false;
+			var isSymbalClick = false;
+			//输入数字
+			function input(number){	
+				
+				if(isEqualClick == true){
+					clearAll();
+					isEqualClick = false;
+				}
+				
+				//点击=计算上次的运算结果，再点击数字，应该重新开始运算
+				var str = document.getElementById("result_inner").innerHTML;
+				if(str.length < 25){
+					document.getElementById("result_inner").innerHTML += number;
+					isSymbalClick = false;
+				}		
+			}
+			
+			//输入运算符
+			function operate(symbal){
+				
+				if(isSymbalClick == false){
+					document.getElementById("result_inner").innerHTML += symbal;
+					isPointClick = false;////输入运算符之后就将小数点标志清掉，下次可以重回新输入小数点
+					isSymbalClick = true;
+				}
+				
+			}
+			
+			//输入小数点
+			function point(point){
+				//没有输入小数点才可以输入
+				if(isPointClick == false){
+					document.getElementById("result_inner").innerHTML += point;
+					isPointClick = true;
+				}	
+				
+			}
+			
+			//=:实现计算的功能 eval()计算函数
+			function calc(){
+				
+				//isEqualClick = true;
+				
+				//字符串第一位是数字，最后一位也是数字，中间至少有一个运算符
+				var str = document.getElementById("result_inner").innerHTML;
+				
+				var isLengthOk = str.length >= 3;
+				
+				var firstCode = str.charCodeAt(0);
+				var isFirstcodeOk = firstCode >= 48 && firstCode <= 57;
+				
+				var lastCode = str.charCodeAt(str.length - 1);
+				var isLastcodeOk = lastCode >= 48 && lastCode <= 57;
+				
+				var isSymbalOk = str.indexOf("+")>=0 || str.indexOf("-")>=0 ||
+								str.indexOf("*")>=0 || str.indexOf("/")>=0 || str.indexOf("%")>=0;
+				
+				if(isLengthOk == true && isFirstcodeOk == true && isLastcodeOk == true && isSymbalOk == true)
+				{
+					isEqualClick = true;
+					
+					var result = eval(str);
+					if(result == Infinity)
+					{
+						window.alert("除数不能是0");
+					}else if(isNaN(result)){						
+						window.alert("余数不能是0");
+					}else{
+						document.getElementById("result_inner").innerHTML = result;
+					}
+						
+				}else{
+					
+					window.alert("表达式错误");
+				}
+				
+			}
+			
+			//回退键：删除最后一个字符
+			function back(){	
+				
+				var str = document.getElementById("result_inner").innerHTML;
+				document.getElementById("result_inner").innerHTML = str.slice(0, length-1);	
+				
+			}
+			
+			//AC 清空计算结果
+			function clearAll(){
+				
+				var str = document.getElementById("result_inner").innerHTML;
+				document.getElementById("result_inner").innerHTML = str.slice(0,0);
+				
+				isPointClick = false;
+			}
+			
+			//
+		</script>
+		
+		
+		
+		<style>
+			#menu {
+				width: 450px;
+				height: 50px;
+				border: solid 2px dimgray;
+				margin: auto;
+				background-color: dimgray;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+			}
+			
+			#result {
+				width: 450px;
+				height: 60px;
+				border: solid 2px dimgray;
+				margin: auto;
+				background-color: dimgray;
+			}
+			#result>div {
+			/* #result div { */
+			/* #result div:last-child { */
+			/* #result div:nth-child(3) { */
+				width: 440px;
+				height: 55px;
+				border: solid 2px red;
+				margin: auto;
+				background-color: whitesmoke;
+				font-size: 30px;
+			}
+			
+			#button {
+				width: 450px;
+				height: 420px;
+				border: solid 2px dimgray;
+				margin: auto;
+				background-color: dimgray;
+			}
+			
+			#button>div {
+				/* width: 108px; */
+				width: 24.1%;
+				height: 80px;
+				border: solid 2px dimgray;
+				float: left;
+				background-color: aquamarine;
+				font-size: 30px;
+				text-align: center;
+				line-height: 80px;
+			}
+			#button div:hover {
+				background-color: orangered;
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			&nbsp;
+			<font size="6" color="red">●</font>
+			<font size="6" color="blue">●</font>
+			<font size="6" color="green">●</font>
+		</div>
+		
+		<div id="result">
+			<div id="result_inner"></div>
+		</div>
+		
+		<div id="button">
+			<div onclick="clearAll()">AC</div>
+			<div>+/</div>
+			<div onclick="operate('%')">%</div>
+			<div onclick="operate('/')">÷</div>
+			<div onclick="input(7)">7</div>
+			<div onclick="input(8)">8</div>
+			<div onclick="input(9)">9</div>
+			<div onclick="operate('*')">×</div>
+			<div onclick="input(4)">4</div>
+			<div onclick="input(5)">5</div>
+			<div onclick="input(6)">6</div>
+			<div onclick="operate('-')">-</div>
+			<div onclick="input(1)">1</div>
+			<div onclick="input(2)">2</div>
+			<div onclick="input(3)">3</div>
+			<div onclick="operate('+')">+</div>
+			<div onclick="input(0)">0</div>
+			<div onclick="back()">回退</div>
+			<div onclick="point('.')">.</div>
+			<div onclick="calc()">=</div>
+		</div>
+	</body>
+</html>
+

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DIV盒子模型</title>
+		
+		<style>
+			#outer{
+				width: 600px;
+				height: 400px;
+				border: solid 2px red; /*-- 必须设置border属性，不然子类设置
+				margin: auto;
+				background-color: red;
+				/* padding: 40px; */	/* -- 会将盒子外框变大 600+2*padding--*/
+			/* 	line-height: 200px;
+				/* text-align: center; */  /* -- 设置一行文本居中显示 --*/
+			}
+			
+			#inner{
+				width: 300px;
+				/* height: 140px; */
+				/* border: solid 2px blue; */
+				background-color: blue;
+				/* margin-left: 148px;	
+				margin-top: 98px; */	/*-- (600-300-2*2)/2--*/
+				/* margin: auto; */
+				/* margin-top: 100px; */
+				/* margin-left: 150px; */
+				/* margin: 100px 150px 100px 150px; */
+				/* vertical-align: bottom; */  /*-- 这个属性不好用 --*/
+				text-align: center;  /*-- 文字垂直居中 --*/
+				/* font-size: 20px; */
+				/* padding-top: 80px; */  /* 设置padding-top多少，height就对应减少多少，要不然盒子就变大了多少*/
+				line-height: 30px;
+				/* padding-top: 70px; */
+				
+				margin: auto; 
+				margin-top: 100px;
+				padding-top: 70px;
+				padding-bottom: 70px;
+			
+			}
+			
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<div id="outer">
+			<div id="inner">
+				<font>这是第一行</font></br>
+				<font>这是第二行</font></br>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			
+			#outer{
+				width: 600px;
+				height: 400px;
+				/*-- 必须设置border属性，不然子类设置margin属性的时候会出问题 --*/
+				border: solid 2px red; 		
+			}
+			/* 不设置height,自适应模式 */			
+			#inner{
+				width: 300px;
+				background-color: blue;
+				/*-- 文字垂直居中 --*/
+				text-align: center;  
+				margin: auto; 
+				margin-top: 100px;
+				padding-top: 70px;
+				padding-bottom: 70px;	
+				/* padding: 70px 0px;  组合属性：上右下左 */
+			} 
+			
+					
+		</style>
+	</head>
+	<body>
+		
+		<div id="outer">
+			<div id="inner">
+				<font>这是第一行</font></br>
+				<font>这是第二行</font>
+			</div>
+		</div>
+	</body>
+</html>

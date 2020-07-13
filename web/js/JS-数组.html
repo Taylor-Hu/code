@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS-数组</title>
+		
+		<script>		
+			var arr = [1,2,3.14,'hello',null,true];
+			console.log(arr.length);//6
+			console.log(arr);//(6) [1, 2, 3.14, "hello", null, true]
+			
+			arr.length = 7;
+			console.log(arr);//(7) [1, 2, 3.14, "hello", null, true, empty]
+			
+			arr.length = 2;
+			console.log(arr);//(2) [1, 2]
+			
+			
+			var arr1 = ['A','B','C'];
+			arr1[1] = 99;
+			console.log(arr1);// ["A", 99, "C"]
+			
+			var arr2 = [1,2,3];
+			arr2[5] = 'x';
+			console.log(arr2);//(6) [1, 2, 3, empty × 2, "x"]
+			
+			//indexof:Array也可以通过indexOf()来搜索一个指定的元素的位置
+			var arr = [10,20,'30','xyz'];
+			var ret = arr.indexOf(10);
+			console.log(ret);//0
+			
+			//数字30和字符串'30'是不同的元素。
+			ret = arr.indexOf(30);
+			console.log(ret);//-1
+			
+			ret = arr.indexOf('30');
+			console.log(ret);//2
+			
+			//slice:截取Array的部分元素，然后返回一个新的Array
+			var arr = ['a','b','c','d','e','f','g'];
+			var arr1 = arr.slice(0,3);
+			//截取之后的arr=a,b,c,d,e,f,g,获取的arr1=a,b,c
+			console.log("截取之后的arr="+arr+",获取的arr1="+arr1);
+			
+			var arr2 = arr.slice(3);
+			//(4) ["d", "e", "f", "g"]
+			console.log(arr2);
+			
+			//用这个方法可以复制一个字符串，但是aCopy === arr;//FALSE
+			var aCopy = arr.slice();
+			//(7) ["a", "b", "c", "d", "e", "f", "g"]
+			console.log(aCopy);
+			
+			//push和pop: push()向Array的末尾添加若干元素，pop()则把Array的最后一个元素删除掉
+			var arr = [1, 2];
+			arr.push('a', 'b');//arr=1,2,a,b,arr的长度：4
+			console.log("arr="+arr+",arr的长度："+arr.length);
+			
+			arr.pop();//arr=1,2,a,arr的长度：3
+			console.log("arr="+arr+",arr的长度："+arr.length);
+			
+			arr.pop();arr.pop();arr.pop();//连续弹出三次，空了，arr=,arr的长度：0
+			console.log("arr="+arr+",arr的长度："+arr.length);
+			
+			arr.pop();//arr=,arr的长度：0
+			//空数组还可以继续弹出，不会报错
+			console.log("arr="+arr+",arr的长度："+arr.length);
+			
+			//unshift和shift:如果要往Array的头部添加若干元素，使用unshift()方法，shift()方法则把Array的第一个元素删掉：
+			var arr = [1,2];
+			arr.unshift('a','b');//arr=a,b,1,2,arr的长度：4
+			console.log("arr="+arr+",arr的长度："+arr.length);
+			
+			arr.shift();//返回值'a'，arr=b,1,2,arr的长度：3
+			console.log("arr="+arr+",arr的长度："+arr.length);
+			
+			arr.shift();arr.shift();arr.shift();//arr数组为空,arr=,arr的长度：0
+			console.log("arr="+arr+",arr的长度："+arr.length);
+			
+			arr.shift();//arr=,arr的长度：0
+			//空数组还可以继续弹出，不会报错
+			console.log("arr="+arr+",arr的长度："+arr.length);
+			
+			//sort:sort()可以对当前Array进行排序，它会直接修改当前Array的元素位置，直接调用时，按照默认顺序排序：
+			var arr = ['b','c','a'];
+			arr.sort();
+			//排序之后的arr:a,b,c   顺序输出
+			console.log("排序之后的arr:"+arr);
+			
+			//reverse：reverse()把整个Array的元素给掉个个，也就是反转
+			var arr = ['one', 'two', 'three'];
+			arr.reverse();//反转之后的arr:three,two,one
+			console.log("反转之后的arr:"+arr);
+			
+			//join:join()方法是一个非常实用的方法，它把当前Array的每个元素都用指定的字符串连接起来，然后返回连接后的字符串
+			var arr = ['A', 'B', 'C', 1, 2, 3];
+			var arr1 = arr.join("-"); // 'A-B-C-1-2-3'
+			console.log("调用join方法之后返回的字符串arr1:"+arr1);
+			
+			//splice：splice()方法是修改Array的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素
+			var arr = ['a','b','c','e','f','g','h'];
+			arr.splice(2, 3, 'sd', 'hulei');//arr:a,b,sd,hulei,g,h
+			console.log("调用splice方法得到的字符串arr:"+arr);
+			
+			//只删除不添加
+			arr.splice(2, 2);//arr:a,b,g,h
+			console.log("调用splice方法得到的字符串arr:"+arr);
+			
+			//只添加不删除
+			arr.splice(2,0,'sundi','xiayue');//arr:a,b,sundi,xiayue,g,h
+			console.log("调用splice方法得到的字符串arr:"+arr);
+			
+			//concat:concat()方法把当前的Array和另一个Array连接起来，并返回一个新的Array
+			var arr = ['a', 'b', 'c'];
+			var add_arr = arr.concat([1, 2, 3]);
+			//请注意，concat()方法并没有修改当前Array，而是返回了一个新的Array
+			//add_arr:a,b,c,1,2,3 	arr:a,b,c
+			console.log("调用concat方法得到的字符串add_arr:"+add_arr+", 当前字符串是"+arr);
+			
+			var arr = ['a', 'b', 'c'];
+			var add_arr = arr.concat(1, 2, [3, 4]);
+			//concat()方法可以接收任意个元素和Array，并且自动把Array拆开，然后全部添加到新的Array里
+			//add_arr:a,b,c,1,2,3,4		arr:a,b,c
+			console.log("调用concat方法拆分的字符串add_arr:"+add_arr+", 当前字符串是"+arr);
+			
+			//多维数组
+			var arr = [[1, 2, 3], [400, 500, 600], '-'];
+			var x = arr[1][1];//通过下标获取二位数组元素的方法
+			console.log(x);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

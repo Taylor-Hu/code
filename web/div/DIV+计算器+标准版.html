@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DIV计算器</title>
+		<style>
+			#menu {
+				width: 450px;
+				height: 50px;
+				border: solid 2px dimgray;
+				margin: auto;
+				background-color: dimgray;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+			}
+			
+			#result {
+				width: 450px;
+				height: 60px;
+				border: solid 2px dimgray;
+				margin: auto;
+				background-color: dimgray;
+			}
+			#result>div {
+			/* #result div { */
+			/* #result div:last-child { */
+			/* #result div:nth-child(3) { */
+				width: 440px;
+				height: 55px;
+				border: solid 2px red;
+				margin: auto;
+				background-color: whitesmoke;
+			}
+			
+			#button {
+				width: 450px;
+				height: 420px;
+				border: solid 2px dimgray;
+				margin: auto;
+				background-color: dimgray;
+			}
+			
+			#button>div {
+				/* width: 108px; */
+				width: 24.1%;
+				height: 80px;
+				border: solid 2px dimgray;
+				float: left;
+				background-color: aquamarine;
+				font-size: 30px;
+				text-align: center;
+				line-height: 80px;
+			}
+			#button div:hover {
+				background-color: orangered;
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			&nbsp;
+			<font size="6" color="red">●</font>
+			<font size="6" color="blue">●</font>
+			<font size="6" color="green">●</font>
+		</div>
+		
+		<div id="result">
+			<div></div>
+		</div>
+		
+		<div id="button">
+			<div>AC</div>
+			<div>+/</div>
+			<div>%</div>
+			<div>÷</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>×</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>-</div>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>+</div>
+			<div>0</div>
+			<div>回退</div>
+			<div>.</div>
+			<div>=</div>
+		</div>
+	</body>
+</html>

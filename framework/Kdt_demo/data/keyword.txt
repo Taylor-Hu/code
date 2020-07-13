@@ -1,0 +1,6 @@
+Open Browser,http://192.168.80.128/agileone
+Input Text,id=username,admin
+Input Text,id=password,admin
+Click,id=login
+Wait,2
+Close Browser
